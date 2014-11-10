@@ -1,16 +1,12 @@
 source 'https://rubygems.org'
-ruby "2.1.3"
 
 gem 'volt', '0.8.21'
 
 # The following gem's are optional for themeing
 
-# Twitter bootstrap
-gem 'volt-bootstrap'
-
-# Simple theme for bootstrap, remove to theme yourself.
-gem 'volt-bootstrap-jumbotron-theme'
-
+gem 'volt-foundation', '~> 0.0.4'
+gem 'twitter'
+gem 'linguistics'
 
 # Server for MRI
 platform :mri do

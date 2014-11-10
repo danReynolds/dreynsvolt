@@ -1,10 +1,18 @@
 class MainController < Volt::ModelController
+  model :page
+
   def index
-    # Add code for when the index view is loaded
+  end
+
+  def social
   end
 
   def about
-    # Add code for when the about view is loaded
+    # Add code for when the ` view is loaded
+  end
+
+  def change_text
+    page._social_text = "Monkeys"
   end
 
   private
@@ -15,4 +23,5 @@ class MainController < Volt::ModelController
   def main_path
     params._controller.or('main') + '/' + params._action.or('index')
   end
+
 end

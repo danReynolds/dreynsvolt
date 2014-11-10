@@ -1,1 +1,41 @@
-// Place your apps css here
+body {
+	background-image: url("/assets/images/pw_pattern.png");
+}
+
+a.back {
+	color: red;
+}
+
+#twitter-widget-0 {
+	width: 100% !important;
+	height: 300px;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+
+	h1 {
+		text-align: center;
+	}
+
+	&#social {
+		max-width: 800px;
+		max-height: 300px;
+	}
+	&#index {
+		max-width: 800px;
+		max-height: 300px;
+	}
+
+	&#about {
+		max-width: 800px;
+		max-height: 300px;
+	}
+}
