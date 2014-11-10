@@ -1,18 +1,25 @@
 class MainController < Volt::ModelController
-  model :page
-
   def index
+  end
+
+  def index_ready
+    
   end
 
   def social
   end
 
   def about
-    # Add code for when the ` view is loaded
   end
 
-  def change_text
-    page._social_text = "Monkeys"
+  def about_ready
+    `mapOptions = {
+      center: new google.maps.LatLng(43.4615875, -80.54107),
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var mapCanvas = document.getElementById('map_canvas');
+    var map = new google.maps.Map(mapCanvas, mapOptions);`
   end
 
   private
@@ -23,5 +30,4 @@ class MainController < Volt::ModelController
   def main_path
     params._controller.or('main') + '/' + params._action.or('index')
   end
-
 end

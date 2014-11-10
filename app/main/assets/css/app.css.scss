@@ -2,13 +2,12 @@ body {
 	background-image: url("/assets/images/pw_pattern.png");
 }
 
-a.back {
-	color: red;
+h1, p {
+	font-family: 'Fjord One', serif;
 }
 
-#twitter-widget-0 {
-	width: 100% !important;
-	height: 300px;
+a {
+	&.back { color: red; }
 }
 
 .container {
@@ -21,8 +20,12 @@ a.back {
 	right: 0;
 	margin: auto;
 
+	@media only screen and (max-width: 40em) { position: inherit; }
+
 	h1 {
 		text-align: center;
+		-webkit-animation: mymove 2s;
+		animation: mymove 2s;
 	}
 
 	&#social {
@@ -35,7 +38,11 @@ a.back {
 	}
 
 	&#about {
-		max-width: 800px;
 		max-height: 300px;
 	}
+}
+
+@-webkit-keyframes mymove {
+   0% {opacity: 0;}
+   100% {opacity:1;}
 }
