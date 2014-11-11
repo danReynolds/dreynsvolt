@@ -19,6 +19,8 @@ a {
 	left: 0;
 	right: 0;
 	margin: auto;
+	max-height: 300px;
+	padding: 20px;
 
 	@media only screen and (max-width: 40em) { position: inherit; }
 
@@ -26,19 +28,6 @@ a {
 		text-align: center;
 		-webkit-animation: mymove 2s;
 		animation: mymove 2s;
-	}
-
-	&#social {
-		max-width: 800px;
-		max-height: 300px;
-	}
-	&#index {
-		max-width: 800px;
-		max-height: 300px;
-	}
-
-	&#about {
-		max-height: 300px;
 	}
 }
 

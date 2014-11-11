@@ -1,14 +1,4 @@
 class MainController < Volt::ModelController
-  def index
-  end
-
-  def index_ready
-    
-  end
-
-  def social
-  end
-
   def about
   end
 
@@ -20,6 +10,23 @@ class MainController < Volt::ModelController
     }
     var mapCanvas = document.getElementById('map_canvas');
     var map = new google.maps.Map(mapCanvas, mapOptions);`
+  end
+
+  def index
+  end
+
+  def recreation
+  end
+
+  def recreation_ready
+    `var svg = new Walkway({
+        selector: '#monitor',
+        duration: 2500
+      });`
+    `svg.draw();`
+  end
+
+  def social
   end
 
   private
