@@ -15,6 +15,23 @@ class MainController < Volt::ModelController
   def index
   end
 
+  def social
+    HTTP.get("https://api.github.com/users/danReynolds/events/public") do |response|
+      if response.ok?
+        pushes = response.json.select{ |event| event[:type] == "PushEvent" }.first(5)
+        pushes.each do |p|
+          page._activities << {
+            repo: p[:repo][:name],
+            description: p[:payload][:commits].first[:message],
+            url: p[:payload][:url]
+          }
+        end
+      else
+        alert "request failed :("
+      end
+    end
+  end
+
   def recreation
   end
 
@@ -24,9 +41,6 @@ class MainController < Volt::ModelController
         duration: 2500
       });`
     `svg.draw();`
-  end
-
-  def social
   end
 
   private

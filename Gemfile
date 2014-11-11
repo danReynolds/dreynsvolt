@@ -5,8 +5,6 @@ gem 'volt', '0.8.21'
 # The following gem's are optional for themeing
 
 gem 'volt-foundation', '~> 0.0.4'
-gem 'twitter'
-gem 'linguistics'
 
 # Server for MRI
 platform :mri do
