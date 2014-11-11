@@ -24,7 +24,7 @@ class MainController < Volt::ModelController
           page._activities << {
             repo: p[:repo][:name],
             description: p[:payload][:commits].first[:message],
-            url: p[:payload][:url]
+            head: p[:payload][:head]
           }
         end
       else

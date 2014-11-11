@@ -7,24 +7,29 @@
 			<h1>I am out there.</h1>
 		</div>
 		<div class="row">
-			<div class="large-12 small-12 columns">
+			<div class="large-6 small-12 columns">
 				<p>
-					To verify this, I am available on 
+					On a daily basis you can find me on
 	  			<a href="https://twitter.com/TheDerivative">Twitter,</a>
 	  			<a href="http://ca.linkedin.com/pub/daniel-reynolds/63/569/32a">LinkedIn,</a>
-					and all of those good things. All you have to do is talk to me. I generally find it pretty easy to be
-	  			<a class="back" href="/"> social.</a>
+					and
+	  			<a href="https://github.com/danReynolds">GitHub.</a>
+					Send me a message anytime and I'll make sure to get 
+	  			<a href="/" class="back">back</a>
+					to you. Check out my latest GitHub activity:
 				</p>
 			</div>
-		</div>
-		<div class="row">
-			<ul>
-				{{page._activities.each do |activity|}}
-				<li>
-					<a href="{{activity._url}}">{{activity._description}}</a>
-					on {{activity._repo}}
-				</li>
-				{{end}}
-			</ul>
+			<div class="large-5 large-offset1 small-12 columns">
+				<div class="row">
+					<ul>
+						{{page._activities.each do |activity|}}
+						<li>
+							<a href="http://github.com/{{activity._repo}}/commit/{{activity._head}}">{{activity._description}}</a>
+							on {{activity._repo}}
+						</li>
+						{{end}}
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
