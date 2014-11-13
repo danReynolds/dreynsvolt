@@ -6,6 +6,9 @@ Volt.configure do |config|
   # without the need to customize.  Make sure this value doesn't leave your server.
   config.app_secret = 'zYZkz0vjyU4aSoZ3JqwP-2gwhJjZSmjzpqPpz7zTrDM6PzFvph_tb0ItXc3nd6Sg5A4'
 
+  configure :production do
+    require 'newrelic_rpm'
+  end
   # The app name defaults to the folder it is run in.
   # config.app_name = 'dreynsvolt'
 
