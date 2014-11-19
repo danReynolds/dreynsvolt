@@ -7,7 +7,9 @@ h1, p {
 }
 
 a {
-	&.back { color: red; }
+	color: #6EA4E0;
+	&.back, &.back:hover { color: red; }
+	&:hover { color: #6EA4E0; }
 }
 
 .container {
