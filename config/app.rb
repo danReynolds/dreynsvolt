@@ -9,6 +9,7 @@ Volt.configure do |config|
   configure :production do
     require 'newrelic_rpm'
   end
+
   # The app name defaults to the folder it is run in.
   # config.app_name = 'dreynsvolt'
 

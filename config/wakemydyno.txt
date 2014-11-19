@@ -1,0 +1,1 @@
+Pings Heroku dyno so that the site doesn't fall over.
