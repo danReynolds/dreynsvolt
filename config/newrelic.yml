@@ -3,7 +3,7 @@
 # .NET, PHP, Python and Node applications with deep visibility and low
 # overhead.  For more information, visit www.newrelic.com.
 #
-# Generated November 13, 2014
+# Generated November 19, 2014
 #
 # This configuration file is custom generated for app31417257@heroku.com
 
@@ -49,7 +49,7 @@ common: &default_settings
   # See https://newrelic.com/docs/site/renaming-applications for more details
   # on renaming your New Relic applications.
   #
-  app_name: My Application
+  app_name: dreynsvolt
 
   # When "true", the agent collects performance data about your
   # application and reports this data to the New Relic service at
@@ -59,7 +59,7 @@ common: &default_settings
 
   # Developer mode should be off in every environment but
   # development as it has very high overhead in memory.
-  developer_mode: false
+  developer_mode: true
 
   # The newrelic agent generates its own log file to keep its logging
   # information separate from that of your application. Specify its
@@ -70,10 +70,10 @@ common: &default_settings
   # root directory (may be relative or absolute, e.g. 'log/' or
   # '/var/log/') The agent will attempt to create this directory if it
   # does not exist.
-  # log_file_path: 'log'
+  log_file_path: 'log'
 
   # Optionally set the name of the log file, defaults to 'newrelic_agent.log'
-  # log_file_name: 'newrelic_agent.log'
+  log_file_name: 'newrelic_agent.log'
 
   # The newrelic agent communicates with the service via https by default.  This
   # prevents eavesdropping on the performance metrics transmitted by the agent.
@@ -192,7 +192,7 @@ development:
   <<: *default_settings
   # Turn on communication to New Relic service in development mode
   monitor_mode: true
-  app_name: My Application (Development)
+  app_name: dreynsvolt (Development)
 
   # Rails Only - when running in Developer Mode, the New Relic Agent will
   # present performance information on the last 100 transactions you have
@@ -205,7 +205,7 @@ test:
   <<: *default_settings
   # It almost never makes sense to turn on the agent when running
   # unit, functional or integration tests or the like.
-  monitor_mode: false
+  monitor_mode: true
 
 # Turn on the agent in production for 24x7 monitoring. NewRelic
 # testing shows an average performance impact of < 5 ms per
@@ -221,4 +221,4 @@ production:
 staging:
   <<: *default_settings
   monitor_mode: true
-  app_name: My Application (Staging)
+  app_name: dreynsvolt

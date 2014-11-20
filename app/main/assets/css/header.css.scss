@@ -1,17 +1,14 @@
 .header {
-	padding: 15px 0 15px 30px;
+	padding: 14px 0 14px 30px;
 	width: 100%;
-	background: #6EA4E0;
+	background: rgba(10, 145, 203, 0.8);
 
 	.title {
 		display: inline-block;
+		h1 { font-size: 24px; }
 		p, h1 {
-			color: white;
 			margin: 0;
+			color: white;
 		}
-		h1 {
-			font-size: 25px;
-		}
-		
 	}
 }
