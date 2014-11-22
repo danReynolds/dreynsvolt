@@ -1,18 +1,12 @@
 class MainController < Volt::ModelController
+
   def about
   end
 
-  def about_ready
-    `mapOptions = {
-      center: new google.maps.LatLng(43.4615875, -80.54107),
-      zoom: 14,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var mapCanvas = document.getElementById('map_canvas');
-    var map = new google.maps.Map(mapCanvas, mapOptions);`
+  def index
   end
 
-  def index
+  def recreation
   end
 
   def social
@@ -33,7 +27,21 @@ class MainController < Volt::ModelController
     end
   end
 
-  def recreation
+  #### Ready Functions ####
+
+  def about_ready
+    set_height
+    `mapOptions = {
+      center: new google.maps.LatLng(43.4615875, -80.54107),
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var mapCanvas = document.getElementById('map_canvas');
+    var map = new google.maps.Map(mapCanvas, mapOptions);`
+  end
+
+  def index_ready
+    set_height
   end
 
   def recreation_ready
@@ -42,13 +50,20 @@ class MainController < Volt::ModelController
         duration: 2500
       });`
     `svg.draw();`
+    set_height(50)
+  end
+
+  def social_ready
+    set_height
   end
 
   private
 
-  # the main template contains a #template binding that shows another
-  # template.  This is the path to that template.  It may change based
-  # on the params._controller and params._action values.
+  def set_height(offset = 0)
+    child_height = Element.find(".container").height + offset
+    Element.find(".section").css 'height', child_height
+  end
+
   def main_path
     params._controller.or('main') + '/' + params._action.or('index')
   end

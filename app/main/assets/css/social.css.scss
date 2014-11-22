@@ -1,0 +1,15 @@
+#social {
+  .commits {
+    overflow: scroll;
+  }
+  li {
+    .nav-link {
+      p { color: #0078a0; }
+    }
+    p {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}
+

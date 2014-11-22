@@ -2,33 +2,36 @@
 	Social - Dan Reynolds
 
 <:Body>
-	<div class="container" id="social">
-		<div class="row title">
-			<h1>I am out there.</h1>
-		</div>
-		<div class="row">
-			<div class="large-6 small-12 columns">
-				<p>
-					On a day-to-day basis you're likely to find me on
-	  			<a href="https://twitter.com/TheDerivative" target="_blank">Twitter,</a>
-	  			<a href="http://ca.linkedin.com/pub/daniel-reynolds/63/569/32a">LinkedIn,</a>
-					and
-	  			<a href="https://github.com/danReynolds" target="_blank">GitHub.</a>
-					Send me a message anytime and I'll make sure to get 
-	  			<a href="/" class="back" target="_blank">back</a>
-					to you. Here's my latest GitHub activity:
-				</p>
+	<div class="section" id="social">
+		<div class="container">
+			<div class="row title">
+				<h1>I am out there.</h1>
 			</div>
-			<div class="large-6 small-12 columns">
-				<div class="row">
-					<ul>
-						{{page._activities.each do |activity|}}
-						<li>
-							<a href="http://github.com/{{activity._repo}}/commit/{{activity._head}}" target="_blank">{{activity._description}}</a>
-							on {{activity._repo}}
-						</li>
-						{{end}}
-					</ul>
+			<div class="row">
+				<div class="large-6 small-12 columns">
+					<p>
+						On a day-to-day basis you're likely to find me on
+		  			<a class="nav-link" href="https://twitter.com/TheDerivative" target="_blank">Twitter,</a>
+		  			<a class="nav-link" href="http://ca.linkedin.com/pub/daniel-reynolds/63/569/32a">LinkedIn,</a>
+						and
+		  			<a class="nav-link" href="https://github.com/danReynolds" target="_blank">GitHub.</a>
+						Send me a message anytime and I'll make sure to get 
+		  			<a class="nav-link" href="/" class="nav-link back" target="_blank">back</a>
+						to you. Here's my latest GitHub activity:
+					</p>
+				</div>
+				<div class="large-6 small-12 columns">
+					<div class="row commits">
+						<ul>
+							{{page._activities.each do |activity|}}
+							<li>
+								<a class="nav-link" href="http://github.com/{{activity._repo}}/commit/{{activity._head}}" target="_blank">  <p>{{activity._description}}</p>
+								</a>
+								<p>on {{activity._repo}}</p>
+							</li>
+							{{end}}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
