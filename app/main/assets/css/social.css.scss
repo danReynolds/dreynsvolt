@@ -1,8 +1,6 @@
 #social {
-  .commits {
-    overflow: scroll;
-  }
   li {
+    list-style-type: none;
     .nav-link {
       p { color: #0078a0; }
     }

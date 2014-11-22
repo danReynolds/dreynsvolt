@@ -10,21 +10,7 @@ class MainController < Volt::ModelController
   end
 
   def social
-    HTTP.get("https://api.github.com/users/danReynolds/events/public") do |response|
-      if response.ok?
-        pushes = response.json.select{ |event| event[:type] == "PushEvent" }.first(5)
-        page._activities = []
-        pushes.each do |p|
-          page._activities << {
-            repo: p[:repo][:name],
-            description: p[:payload][:commits].first[:message],
-            head: p[:payload][:head]
-          }
-        end
-      else
-        page._activities = []
-      end
-    end
+    get_commits
   end
 
   #### Ready Functions ####
@@ -58,6 +44,24 @@ class MainController < Volt::ModelController
   end
 
   private
+
+  def get_commits
+    HTTP.get("https://api.github.com/users/danReynolds/events/public") do |response|
+      if response.ok?
+        pushes = response.json.select{ |event| event[:type] == "PushEvent" }.first(5)
+        page._activities = []
+        pushes.each do |p|
+          page._activities << {
+            repo: p[:repo][:name],
+            description: p[:payload][:commits].first[:message],
+            head: p[:payload][:head]
+          }
+        end
+      else
+        page._activities = []
+      end
+    end
+  end
 
   def set_height(offset = 0)
     child_height = Element.find(".container").height + offset
