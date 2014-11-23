@@ -48,7 +48,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 1rem;
 	margin: .5em 0;
 	overflow: auto;
 }
@@ -60,8 +60,8 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
+	padding: .1rem;
+	border-radius: .3rem;
 }
 
 .token.comment,
@@ -133,7 +133,7 @@ pre[class*="language-"] {
 
 pre.line-numbers {
 	position: relative;
-	padding-left: 3.8em;
+	padding-left: 3.8rem;
 	counter-reset: linenumber;
 }
 
@@ -146,8 +146,8 @@ pre.line-numbers > code {
 	pointer-events: none;
 	top: 0;
 	font-size: 100%;
-	left: -3.8em;
-	width: 3em; /* works for line-numbers below 1000 lines */
+	left: -3.8rem;
+	width: 3rem; /* works for line-numbers below 1000 lines */
 	letter-spacing: -1px;
 	border-right: 1px solid #999;
 
@@ -168,6 +168,6 @@ pre.line-numbers > code {
 			content: counter(linenumber);
 			color: #999;
 			display: block;
-			padding-right: 0.8em;
+			padding-right: 0.8rem;
 			text-align: right;
 		}
