@@ -1,0 +1,27 @@
+<:Title>
+	Programs - Dan Reynolds
+
+<:Body>
+	<div class="section" id="programming">
+		<div class="container">
+			<div class="row title">
+				<h1>Typey type type.</h1>
+			</div>
+			<div class="row" id="languages">
+				{{page._languages.each do |lang|}}
+					<div class="row">
+						<div class="language-icon large-2 small-12 columns">
+							<i class="icon-{{lang._icon}}"></i>
+						</div>
+						<div class="large-10 small-12 columns">
+							<pre class="{{lang._name}}">
+							<code class="language-{{lang._name}}">
+{{lang._description}}
+							</code>
+							</pre>
+						</div>
+					</div>
+				{{end}}
+			</div>
+		</div>
+	</div>

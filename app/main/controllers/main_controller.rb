@@ -6,6 +6,15 @@ class MainController < Volt::ModelController
   def index
   end
 
+  def programming
+    page._languages = [
+      { icon: "ruby", name: "ruby", description: "def hello\n  puts 'I am a Rails dev at work and have come to know Ruby pretty well.'\nend" },
+      { icon: "javascript", name: "javascript", description: "function hello() {\n  console.log('Plus I know Javascript. To a certain degree.');\n}" },
+      { icon: "cplusplus", name: "cpp", description: "void hello() {\n std::cout >> 'I have done a lot of C++ on the side, in apps and academia.';\n}"},
+      { icon: "java", name: "java", description: "public void hello() {\n  System.out.println('And then there is Java.');\n}"}
+    ]
+  end
+
   def recreation
   end
 
@@ -28,6 +37,13 @@ class MainController < Volt::ModelController
 
   def index_ready
     set_height
+  end
+
+  def programming_ready
+    set_height
+    `$('#languages').mCustomScrollbar({theme: 'dark'});`
+    `$("pre").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){ $(event.target).children().css("white-space","pre-wrap"); });`
+    `Prism.highlightAll()`
   end
 
   def recreation_ready
