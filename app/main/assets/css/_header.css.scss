@@ -1,7 +1,9 @@
+@import 'mixins';
+
 .header {
 	padding: 14px 0 14px 30px;
 	width: 100%;
-	background: rgba(10, 145, 203, 0.8);
+	background-color: #395491;
 
 	.title {
 		display: inline-block;

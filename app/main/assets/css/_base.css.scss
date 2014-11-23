@@ -8,22 +8,25 @@ h1, p {
 	color: rgb(108, 108, 108);
 }
 
-a.nav-link {
-	border-bottom: 1px solid rgba(52,73,94,0.4);
-	-webkit-transition: background-color 0.3s, border-color 0.3s;
-	transition: background-color 0.3s, border-color 0.3s;
+a {
+	color: #395491;
+	&.nav-link {
+		border-bottom: 1px solid rgba(52,73,94,0.4);
+		-webkit-transition: background-color 0.3s, border-color 0.3s;
+		transition: background-color 0.3s, border-color 0.3s;
 
-	&.back { color: rgb(241, 88, 88); }
+		&.back { color: #833C3C; }
+		&:hover, &:focus {
+			border-color: rgba(52,73,94,0);
+			background-color: rgba(54, 111, 223, 0.15);
+			color: #395491;
 
-	&:hover, &:focus {
-		border-color: rgba(52,73,94,0);
-		background-color: rgba(208, 231, 251, 0.75);
-
-		&.back {
-			background-color: rgba(255, 207, 207, 0.75);
+			&.back {
+				background-color: rgba(226, 116, 116, 0.15);
+				color: #833C3C;
+			}
 		}
 	}
-
 }
 
 .section {
@@ -38,12 +41,12 @@ a.nav-link {
 
 	h1 {
 		text-align: center;
-		-webkit-animation: mymove 2s;
-		animation: mymove 2s;
+		-webkit-animation: fadein 2s;
+		animation: fadein 2s;
 	}
 }
 
-@-webkit-keyframes mymove {
+@-webkit-keyframes fadein {
    0% {opacity: 0;}
    100% {opacity:1;}
 }
