@@ -1,6 +1,16 @@
+@import 'variables';
+
+html {
+	font-size: 30px;
+	@media #{$medium-up} {
+		font-size: 16px;
+	}
+}
+
 body {
 	background-image: url("/assets/images/pw_pattern.png");
 	color: #444343;
+
 }
 
 h1, p {
