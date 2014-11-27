@@ -2,7 +2,7 @@
 
 html {
 	font-size: 30px;
-	@media #{$medium-up} {
+	@media #{$large-up} {
 		font-size: 16px;
 	}
 }
