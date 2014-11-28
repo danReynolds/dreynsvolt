@@ -64,7 +64,7 @@ class MainController < Volt::ModelController
   def get_commits
     HTTP.get("https://api.github.com/users/danReynolds/events/public") do |response|
       if response.ok?
-        pushes = response.json.select{ |event| event[:type] == "PushEvent" }.first(5)
+        pushes = response.json.lazy.select { |event| event[:type] == "PushEvent" }.first(5)
         page._activities = []
         pushes.each do |p|
           page._activities << {
