@@ -52,7 +52,7 @@ class MainController < Volt::ModelController
         duration: 2500
       });`
     `svg.draw();`
-    set_height(50)
+    set_height
   end
 
   def social_ready
