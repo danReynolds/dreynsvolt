@@ -1,18 +1,6 @@
-@function lower-bound($range){
-  @if length($range) <= 0 {
-    @return 0;
-  }
-  @return nth($range,1);
-}
+@import 'mixins';
 
-@function upper-bound($range) {
-  @if length($range) < 2 {
-    @return 999999999999;
-  }
-  @return nth($range, 2);
-}
-
-// Here we define the lower and upper bounds for each media size
+// Foundation provided variables
 $small-range: (0em, 40em); /* 0, 640px */
 $medium-range: (40.063em, 64em); /* 641px, 1024px */
 $large-range: (64.063em, 90em); /* 1025px, 1440px */
@@ -38,3 +26,7 @@ $xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max
 
 $xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})" !default;
 $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})" !default;
+
+// Custom Colours
+$base-colour: rgb(108, 108, 108);
+$border-colour: rgba(52,73,94,0.4);
