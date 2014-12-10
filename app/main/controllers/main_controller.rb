@@ -36,7 +36,6 @@ class MainController < Volt::ModelController
   end
 
   def social
-    get_commits
   end
 
   #### Ready Functions ####
@@ -74,6 +73,7 @@ class MainController < Volt::ModelController
 
   def social_ready
     setup
+    get_commits
   end
 
   def change_colour
