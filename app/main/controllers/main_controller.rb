@@ -76,6 +76,10 @@ class MainController < Volt::ModelController
     get_commits
   end
 
+  def change_colour
+    page._colour = COLOURS.sample
+  end
+
   private
 
   def get_commits
