@@ -76,10 +76,6 @@ class MainController < Volt::ModelController
     get_commits
   end
 
-  def change_colour
-    page._colour = COLOURS.sample
-  end
-
   private
 
   def get_commits
@@ -109,7 +105,6 @@ class MainController < Volt::ModelController
     page._colour = COLOURS.sample unless page._colour._name.or(nil)
     Element.find('a.nav-link').css('color', page._colour._colour1)
     Element.find('a.nav-link.back').css('color', page._colour._colour2)
-    Element.find('.header').css('background', "linear-gradient(90deg, #{page._colour._colour1} 10%, #{page._colour._colour2} 90%)")
   end
 
   def set_height
